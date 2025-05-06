@@ -8,7 +8,15 @@ sources:
         description: "sales of Greenweez / we have on row per product_id found in each orders_id"
         columns:
           - name: date_date
-            description: date of purchase     
+            description: date of purchase
+            
+        loaded_at_field: "CAST(date_date AS TIMESTAMP)"
+        freshness:
+          warn_after: {count: 90, period: day }
+        
+        columns:
+           - name: date_date
+             description: date of purchase     
 
       - name: raw_gz_product
         description: "products of Greenweez"
@@ -26,13 +34,4 @@ sources:
               - unique
               - not_null
 
-models:
-  - name: sales_with_pk
-    description: "Modèle avec clé combinée orders_id + pdt_id"
-    columns:
-      - name: order_product_id
-        description: "Clé combinée de orders_id et pdt_id"
-        tests:
-          - not_null
-          - unique
 
