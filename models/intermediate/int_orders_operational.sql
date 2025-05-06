@@ -1,6 +1,5 @@
 SELECT
-orders_id
-, date_date
+*
 , iom.margin + rgs.shipping_fee - rgs.logcost - rgs.ship_cost AS operational_margin
 
 FROM {{ ref('int_orders_margin') }} as iom
