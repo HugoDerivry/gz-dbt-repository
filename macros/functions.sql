@@ -1,3 +1,3 @@
- {% macro margin_percent(margin, revenue) %}
-     ROUND(SAFE_DIVIDE(margin / revenue),2)
- {% endmacro %}
+{% macro margin_percent(revenue, purchase_cost, decimals=2) %}
+    ROUND(SAFE_DIVIDE({{ revenue }} - {{ purchase_cost }}, {{ revenue }}), {{ decimals }})
+{% endmacro %}
