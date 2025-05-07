@@ -13,7 +13,8 @@ date_date
 ,f.shipping_fee
 ,f.logcost
 ,f.ship_cost
-FROM {{ ref('int_campaigns') }} as c
+FROM {{ ref('int_campaigns_day') }} as c
 LEFT JOIN {{ ref('finance_days') }} as f
 USING(date_date) 
+ORDER BY date_date DESC
 
