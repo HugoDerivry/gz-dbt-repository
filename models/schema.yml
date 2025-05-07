@@ -34,16 +34,14 @@ sources:
               - unique
               - not_null
 
+      - name: raw_gz_adwords
+        
+      - name: raw_gz_bing
+        description: useless 2
 
-models:
-  - name: int_orders_margin
-    description: "USELESS"
-    columns:
-      - name: orders_id
-        tests:
-          - unique
-          - not_null
-      - name: revenue
-        tests:
-          - not_null
+      - name: raw_gz_criteo
+        description: useless 3
+
+      - name: raw_gz_facebook
+        description: useless 4
 
