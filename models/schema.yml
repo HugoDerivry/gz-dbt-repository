@@ -37,11 +37,8 @@ sources:
       - name: raw_gz_adwords
         
       - name: raw_gz_bing
-        description: useless 2
 
       - name: raw_gz_criteo
-        description: useless 3
 
       - name: raw_gz_facebook
-        description: useless 4
 
