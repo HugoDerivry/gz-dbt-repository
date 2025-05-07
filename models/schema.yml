@@ -45,8 +45,8 @@ sources:
 models:
     - name: int_campaigns
       description: useless
-      columns:
-          - name: campaign_key
-            description: "The primary key for this table"
-            tests:
-                - not_null
+      tests:
+        - dbt_utils.unique_combination_of_columns:
+            combination_of_columns:
+              - date_date
+              - campaign_key
